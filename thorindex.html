@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gains</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">	
+	    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	    <link rel="shortcut icon" href="favicon.ico">
+	</head>
+<!-- Hér er bodyinn sem er svo svakalegur -->
+	<body>
+		<div id="layout">
+			<a href="#menu" id="menuLink" class="menu-link">
+	            <!-- hamburger eða pönnuköku icon -->
+	            <span></span>
+            </a>
+            <div id="menu">
+<!-- Í header verður ekki svona menu heldur bara fallegt logo ofl, menu verður í svona responsive sidemenu -->
+			</div>
+			<div id="main">
+				<header>
+					<h1>Title</h1>
+				</header>
+<!-- Í article verða svona fréttir og fleira -->
+				<div class="box pure-g">	
+					<article class="pure-u-1 pure-u-xl-2-3">
+						<h2>Aricle</h2>
+					</article>
+<!-- Hér í aside þá verður svona tabcontrol  -->
+					<aside class="pure-u-1 pure-u-xl-1-3">
+						<h3>Aside</h3>
+					</aside>
+				</div>
+<!-- Hér er fótur og í hann verður skrifað contact info og fleiri svona info -->
+				<div class="box pure-g">
+					<footer class="pure-u-1 pure-u-xl-1">
+						<h4>Footer</h4>
+					</footer>
+				</div>
+			</div>
+		</div>
+<!-- JavaScript sem að græjar responsive side menu -->
+		<script type="text/javascript">
+        	(function (window, document) {
+
+    var layout   = document.getElementById('layout'),
+        menu     = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink');
+
+    function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+        for(; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        	if (length === classes.length) {
+            classes.push(className);
+        		}
+
+        	element.className = classes.join(' ');
+    			}
+
+    		menuLink.onclick = function (e) {
+        		var active = 'active';
+
+        	e.preventDefault();
+        	toggleClass(layout, active);
+        	toggleClass(menu, active);
+        	toggleClass(menuLink, active);
+    	};
+
+			}(this, this.document));
+        </script>
+	</body>
+</html>
+
+<!-- Something we might use later -->
+
+			<!-- <nav>
+				<ul>
+				<li><a href="#">Home</a></li>
+				<li>Events
+					<ul>
+						<li><a href="#">Dagatal</a></li>
+						<li><a href="#">Pay</a></li>
+						<li><a href="#">???</a>
+						</li>
+					</ul>
+				</li>
+				<li>Grind
+					<ul>
+						<li><a href="#">??</a></li>
+						<li><a href="#">??</a></li>
+					</ul>
+				</li>
+			</ul>
+			</nav> -->
